@@ -68,6 +68,76 @@ namespace TriangleSolverTests
          
             ClassicAssert.AreEqual(expected, actual);
         }
+        // 5 Tests for a valid Scalene triangle
+        [Test]
+        public void AnalyzeTriangle_Scalene_UniqueSides1_ReturnsScalene()
+        {
+            // Arrange
+            int side1 = 4, side2 = 5, side3 = 6;
+            string expected = "Scalene triangle";
+
+            // Act
+            string actual = Triangle.AnalyzeTriangle(side1, side2, side3);
+
+            // Assert
+            ClassicAssert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void AnalyzeTriangle_Scalene_UniqueSides2_ReturnsScalene()
+        {
+            // Arrange
+            int side1 = 7, side2 = 8, side3 = 9;
+            string expected = "Scalene triangle";
+            // Act
+            string actual = Triangle.AnalyzeTriangle(side1, side2, side3);
+
+            // Assert
+            ClassicAssert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void AnalyzeTriangle_Scalene_UniqueSides3_ReturnsScalene()
+        {
+            // Arrange
+            int side1 = 10, side2 = 12, side3 = 15;
+            string expected = "Scalene triangle";
+
+            // Act
+            string actual = Triangle.AnalyzeTriangle(side1, side2, side3);
+
+            // Assert
+            ClassicAssert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void AnalyzeTriangle_Scalene_UniqueSides4_ReturnsScalene()
+        {
+            // Arrange
+            int side1 = 13, side2 = 17, side3 = 19;
+            string expected = "Scalene triangle";
+
+            // Act
+            string actual = Triangle.AnalyzeTriangle(side1, side2, side3);
+
+            // Assert
+            ClassicAssert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void AnalyzeTriangle_Scalene_UniqueSides5_ReturnsScalene()
+        {
+            // Arrange
+            int side1 = 9, side2 = 12, side3 = 14;
+            string expected = "Scalene triangle";
+
+            // Act
+            string actual = Triangle.AnalyzeTriangle(side1, side2, side3);
+
+            // Assert
+            ClassicAssert.AreEqual(expected, actual);
+        }
+
 
     }
 }
