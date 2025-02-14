@@ -178,50 +178,42 @@ namespace TriangleSolverTests
             ClassicAssert.AreEqual(expected, actual);
            
         }
-
         // 3 Tests for verifying an invalid response (other than zero length)
         [Test]
-        public void AnalyzeTriangle_InvalidTriangle1_ReturnsInvalid()
+        public void AnalyzeTriangle_InvalidTriangle_SumOfTwoSidesLessThanThird_ReturnsInvalid()
         {
-            // Arrange
+            //Arrange
             int side1 = 1, side2 = 2, side3 = 10;
             string expected = "INVALID!!";
-            // Act
+            //Act
             string actual = Triangle.AnalyzeTriangle(side1, side2, side3);
-
-            // Assert
+            //Assert
             ClassicAssert.AreEqual(expected, actual);
-          
         }
 
         [Test]
-        public void AnalyzeTriangle_InvalidTriangle2_ReturnsInvalid()
+        public void AnalyzeTriangle_InvalidTriangle_OneLargeSide_ReturnsInvalid()
         {
-            // Arrange
+            //Arrange
             int side1 = 10, side2 = 2, side3 = 3;
             string expected = "INVALID!!";
-
-            // Act
+            //Act
             string actual = Triangle.AnalyzeTriangle(side1, side2, side3);
-
-            // Assert
+            //Assert
             ClassicAssert.AreEqual(expected, actual);
         }
 
         [Test]
-        public void AnalyzeTriangle_InvalidTriangle3_ReturnsInvalid()
+        public void AnalyzeTriangle_InvalidTriangle_NegativeValues_ReturnsInvalid()
         {
-            // Arrange
-            int side1 = 5, side2 = 1, side3 = 1;
+            //Arrange
+            int side1 = -5, side2 = 1, side3 = 1;
             string expected = "INVALID!!";
-            // Act
+            //Act
             string actual = Triangle.AnalyzeTriangle(side1, side2, side3);
-
-            // Assert
+            //Assert
             ClassicAssert.AreEqual(expected, actual);
-          
         }
-
 
     }
 }
