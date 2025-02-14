@@ -137,6 +137,90 @@ namespace TriangleSolverTests
             // Assert
             ClassicAssert.AreEqual(expected, actual);
         }
+        // 3 Tests for verifying a zero length
+        [Test]
+        public void AnalyzeTriangle_ZeroSide1_ReturnsInvalid()
+        {
+            // Arrange
+            int side1 = 0, side2 = 5, side3 = 5;
+            string expected = "Invalid Triangle - a zero has been detected";
+            // Act
+            string actual = Triangle.AnalyzeTriangle(side1, side2, side3);
+
+            // Assert
+            ClassicAssert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void AnalyzeTriangle_ZeroSide2_ReturnsInvalid()
+        {
+            // Arrange
+            int side1 = 6, side2 = 0, side3 = 6;
+            string expected = "Invalid Triangle - a zero has been detected";
+            // Act
+            string actual = Triangle.AnalyzeTriangle(side1, side2, side3);
+
+            // Assert
+            ClassicAssert.AreEqual(expected, actual);
+            
+        }
+
+        [Test]
+        public void AnalyzeTriangle_ZeroSide3_ReturnsInvalid()
+        {
+            // Arrange
+            int side1 = 4, side2 = 5, side3 = 0;
+            string expected = "Invalid Triangle - a zero has been detected";
+            // Act
+            string actual = Triangle.AnalyzeTriangle(side1, side2, side3);
+
+            // Assert
+            ClassicAssert.AreEqual(expected, actual);
+           
+        }
+
+        // 3 Tests for verifying an invalid response (other than zero length)
+        [Test]
+        public void AnalyzeTriangle_InvalidTriangle1_ReturnsInvalid()
+        {
+            // Arrange
+            int side1 = 1, side2 = 2, side3 = 10;
+            string expected = "INVALID!!";
+            // Act
+            string actual = Triangle.AnalyzeTriangle(side1, side2, side3);
+
+            // Assert
+            ClassicAssert.AreEqual(expected, actual);
+          
+        }
+
+        [Test]
+        public void AnalyzeTriangle_InvalidTriangle2_ReturnsInvalid()
+        {
+            // Arrange
+            int side1 = 10, side2 = 2, side3 = 3;
+            string expected = "INVALID!!";
+
+            // Act
+            string actual = Triangle.AnalyzeTriangle(side1, side2, side3);
+
+            // Assert
+            ClassicAssert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void AnalyzeTriangle_InvalidTriangle3_ReturnsInvalid()
+        {
+            // Arrange
+            int side1 = 5, side2 = 1, side3 = 1;
+            string expected = "INVALID!!";
+            // Act
+            string actual = Triangle.AnalyzeTriangle(side1, side2, side3);
+
+            // Assert
+            ClassicAssert.AreEqual(expected, actual);
+          
+        }
 
 
     }
